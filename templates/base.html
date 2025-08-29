@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Ishaan • Translator{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <!-- background helpers (images/videos are set per page with classes) -->
+  {% block bg %}{% endblock %}
+
+  <header class="navbar fade-in">
+    <a href="{{ url_for('menu') }}" class="brand">🔤 Ishaan Translator</a>
+    <nav class="nav-links">
+      <a href="{{ url_for('menu') }}">🏠 Menu</a>
+      <a href="{{ url_for('translator_page') }}">🌍 Translator</a>
+      <a href="{{ url_for('about') }}">📘 About</a>
+      <a href="{{ url_for('profile') }}">👤 Profile</a>
+      <a class="btn-danger" href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 • Made with ❤️ by Ishaan</p>
+  </footer>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

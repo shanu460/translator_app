@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Translator • Ishaan{% endblock %}
+{% block body_class %}has-video{% endblock %}
+{% block bg %}
+  <!-- Background video -->
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="{{ url_for('static', filename='bg-video.mp4') }}" type="video/mp4">
+  </video>
+{% endblock %}
+
+{% block content %}
+  <section class="glass rise" style="padding:22px">
+    <h2 style="margin-top:0">🌍 Translator</h2>
+
+    <div class="lang-row" style="margin:10px 0 16px">
+      <div>
+        <label>From</label>
+        <select id="srclang" class="input">
+          <option value="auto">Auto Detect</option>
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="pa">Punjabi</option>
+          <option value="bn">Bengali</option>
+          <option value="gu">Gujarati</option>
+          <option value="mr">Marathi</option>
+          <option value="ta">Tamil</option>
+          <option value="te">Telugu</option>
+          <option value="ur">Urdu</option>
+        </select>
+      </div>
+      <div>
+        <label>To</label>
+        <select id="tgtlang" class="input">
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="pa">Punjabi</option>
+          <option value="bn">Bengali</option>
+          <option value="gu">Gujarati</option>
+          <option value="mr">Marathi</option>
+          <option value="ta">Tamil</option>
+          <option value="te">Telugu</option>
+          <option value="ur">Urdu</option>
+        </select>
+      </div>
+      <div>
+        <label>Voice</label>
+        <select id="voiceGender" class="input">
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+      </div>
+    </div>
+
+    <textarea id="inputText" class="input" placeholder="Type or use 🎙️ Speak Input…"></textarea>
+
+    <div class="actions" style="margin-top:12px">
+      <button id="micBtn" class="btn-secondary">🎙️ Speak Input</button>
+      <button id="translateBtn" class="btn">Translate</button>
+      <button id="speakBtn" class="btn">🔊 Speak Result</button>
+      <button id="clearBtn" class="btn-danger">Clear</button>
+    </div>
+
+    <div class="result-card rise">
+      <h3 style="margin:0 0 6px">Result</h3>
+      <p id="resultText"></p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

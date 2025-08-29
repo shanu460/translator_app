@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Menu • Ishaan Translator{% endblock %}
+{% block body_class %}bg-login{% endblock %}
+{% block bg %}<div class="bg-cover bg-login"></div>{% endblock %}
+
+{% block content %}
+  <section class="rise">
+    <h2 style="margin:0 0 16px">Hi, {{ user }} 👋</h2>
+    <p class="helper" style="margin:0 0 24px">Pick a tool below. Everything is just one click away.</p>
+
+    <div class="menu-grid">
+      <a class="menu-card" href="{{ url_for('translator_page') }}">
+        <div class="menu-icon">🌍</div>
+        <h3>Translator</h3>
+        <p class="helper">Type or speak, get instant translations, listen in Male/Female voice.</p>
+      </a>
+
+      <a class="menu-card" href="{{ url_for('profile') }}">
+        <div class="menu-icon">👤</div>
+        <h3>Profile</h3>
+        <p class="helper">Your photo & a short bio card.</p>
+      </a>
+
+      <a class="menu-card" href="{{ url_for('about') }}">
+        <div class="menu-icon">📘</div>
+        <h3>About Project</h3>
+        <p class="helper">What this app does and how it’s built.</p>
+      </a>
+
+      <a class="menu-card" href="{{ url_for('logout') }}">
+        <div class="menu-icon">🚪</div>
+        <h3>Logout</h3>
+        <p class="helper">See you soon!</p>
+      </a>
+    </div>
+  </section>
+{% endblock %}

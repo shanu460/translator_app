@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Login • Ishaan Translator{% endblock %}
+{% block body_class %}bg-login{% endblock %}
+{% block bg %}
+  <div class="bg-cover bg-login"></div>
+{% endblock %}
+
+{% block content %}
+  <section class="glass login-card rise">
+    <h1 class="login-title">Welcome Back 👋</h1>
+    <p class="helper">Your gateway to an advanced Translator ✨</p>
+
+    {% if error %}
+      <div class="menu-card" style="border-color:#ff9a9a;background:#2a0f13cc">
+        ⚠️ {{ error }}
+      </div>
+    {% endif %}
+
+    <form method="POST" class="login-grid">
+      <input class="input" type="text" name="username" placeholder="Username (any)" required>
+      <input class="input" type="password" name="password" placeholder="Strong Password (Aa1@… 8+)" required>
+      <button class="btn" type="submit">Login →</button>
+    </form>
+  </section>
+{% endblock %}

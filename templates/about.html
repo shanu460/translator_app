@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}About • Ishaan Translator{% endblock %}
+{% block body_class %}bg-about{% endblock %}
+{% block bg %}<div class="bg-cover bg-about"></div>{% endblock %}
+
+{% block content %}
+  <div class="about-grid rise">
+    <div class="glass about-card">
+      <h2 style="margin-top:0">📘 About the Project</h2>
+      <p>
+        This is a modern, fast and friendly Translator built by <b>Ishaan</b>.
+        It supports typing or speaking (STT) and speaks back results (TTS) in Male/Female
+        voices where available. Multiple Indian languages are supported including
+        Hindi, Punjabi, Bengali, Gujarati, Marathi, Tamil, Telugu and Urdu.
+      </p>
+      <p>
+        Frontend uses glassmorphism UI with smooth animations. The backend is built
+        in <b>Flask</b> and translation uses <b>googletrans</b>. Voice features run
+        in the browser via the Web Speech APIs.
+      </p>
+    </div>
+
+    <div class="glass about-card">
+      <img src="{{ url_for('static', filename='login-bg.jpg') }}" alt="project" class="about-img">
+      <p class="helper" style="margin-top:10px">A peek of the aesthetic used across the app.</p>
+    </div>
+  </div>
+{% endblock %}

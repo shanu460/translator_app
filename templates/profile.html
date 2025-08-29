@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Profile • Ishaan{% endblock %}
+{% block body_class %}bg-login{% endblock %}
+{% block bg %}<div class="bg-cover bg-profile"></div>{% endblock %}
+
+{% block content %}
+  <section class="glass profile-card rise">
+    <img src="{{ url_for('static', filename='ishan.jpg') }}" alt="Ishaan" class="profile-photo">
+    <div>
+      <h2 style="margin:0 0 6px">Ishaan</h2>
+      <p class="helper" style="margin:0 0 12px">Builder • Problem Solver • Tech Enthusiast</p>
+      <p style="margin:0">
+        Hello! I’m Ishaan. I love crafting smooth, modern UIs and useful tools.
+        This translator is designed to look great and be super practical:
+        fast, minimal clicks, and with voice in and voice out. Thanks for trying it! ✨
+      </p>
+    </div>
+  </section>
+{% endblock %}
