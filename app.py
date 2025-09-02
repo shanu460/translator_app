@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 from googletrans import Translator
 import re
 import os
-
 app = Flask(__name__)
 app.secret_key = "super_secret_key_change_me"
 
@@ -94,6 +93,7 @@ def api_translate():
 
     try:
         res = translator.translate(text, src=src if src != "auto" else "auto", dest=tgt)
+
         return jsonify({"ok": True, "translated": res.text})
     except Exception as e:
         # Fallback: echo text if googletrans fails (no internet etc.)
